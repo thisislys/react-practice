@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-
+import ReGrandson from './reGrandson';
 class Grandson extends Component {
     render() {
         return (
             <div>
                 <button onClick={this.changeParent}>点击我通过爷爷元素修改父亲的数据</button>
+                <ReGrandson/>
             </div>
         );
     }
