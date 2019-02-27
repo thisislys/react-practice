@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+}
+.data{
+    min-height:50px;
+}
+.city,.citys {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    margin: 5px;
+}
+
+.active {
+    border: 1px solid #ccc;
+}

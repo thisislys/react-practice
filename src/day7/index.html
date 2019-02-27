@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/7.0.0-beta.3/babel.js"></script>
+    <script type='text/babel'>
+        class MyDom extends React.Component {
+            render() {
+                console.log(this.props.num)
+                return <div>我是外部组件</div>
+            }
+        }
+        function newFun(MyDom) {
+            return (num)=>{
+                return class extends React.Component {
+                            render() {
+                                return (
+                                    <div>
+                                        <MyDom num={num}/>
+                                        我是内部组件
+                                    </div>
+                                );
+                            }
+                        }
+            }
+        }
+        let NewDom=newFun(MyDom)({num:55});
+        ReactDOM.render(
+            <NewDom/>,
+            document.getElementById('box')
+        )
+    </script>
+</body>
+
+</html>

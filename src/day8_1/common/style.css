@@ -1,0 +1,48 @@
+*{
+    padding:0;
+    margin:0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+html,body,#app{
+    height: 100%;
+    width: 100%;
+}
+.box{
+    padding:20px;
+}
+
+.info h3{
+    text-align: center;
+}
+.info p{
+    line-height: 50px;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.info b{
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+}
+.info input{
+    border:0;
+    width: 250px;
+    height: 27px;
+    line-height: 27px;
+    outline: 0;
+}
+.info button{
+    margin:5px 0;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    background: skyblue;
+    color: #fff;
+}
+.list p{
+    float: right;
+}

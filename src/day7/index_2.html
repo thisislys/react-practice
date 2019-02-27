@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/7.0.0-beta.3/babel.js"></script>
+    <script type='text/babel'>
+        const {Component}=React;
+        function myFun(obj) {
+            const data={
+                "1609A":["同学1","同学2","同学3"],
+                "1609B":["同学4","同学5","同学6"],
+                "1609C":["同学7","同学8","同学9"]
+            }
+            let datas=obj(data);
+            return (Component)=>{
+               return class extends Component {
+                    render() {
+                        return (
+                            <div>
+                                <Component data={datas}/>
+                            </div>
+                        );
+                    }
+                }
+            }
+        }
+        class Aclass extends Component {
+            render() {
+                const {data}=this.props;
+                return (
+                    <div>
+                        {data}
+                    </div>
+                );
+            }
+        }
+        class Bclass extends Component {
+            render() {
+                const {data}=this.props;
+                return (
+                    <div>
+                        {data}
+                    </div>
+                );
+            }
+        }
+        class Cclass extends Component {
+            render() {
+                const {data}=this.props;
+                return (
+                    <div>
+                        {data}
+                    </div>
+                );
+            }
+        }
+    //    let NewDom = myFun((data)=>{
+    //         return  data['1609A'];
+    //     })(Aclass)
+        let NewDom = myFun((data)=>{
+            return  data['1609B'];
+        })(Bclass)
+        // let NewDom = myFun((data)=>{
+        //     return  data['1609C'];
+        // })(Cclass)
+        ReactDOM.render(
+            <NewDom/>,
+            document.getElementById('box')
+        )
+    </script>
+</body>
+</html>
