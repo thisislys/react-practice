@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.box,
+.wrap {
+    height: 100%;
+    width: 100%;
+}
+
+.box {
+    /**/
+}
+
+.box>p {
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.names {
+    padding: 5px 20px;
+}
+
+.name,
+.else {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+.cons {
+    padding: 10px 20px;
+}
+
+.else {
+    border-bottom: 1px solid #ccc;
+}
+
+.active {
+    color: red;
+}
+
+.comment {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+}
+
+.comment>input {
+    height: 42px;
+    width: 67%;
+    padding-left: 20px;
+    outline: 0;
+    border: 0;
+}
+
+.comment>span {
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    width: 16%;
+}
+
+.comment>button {
+    width: 16%;
+    height: 40px;
+    outline: 0;
+    border: 0;
+}

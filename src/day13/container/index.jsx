@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import '../common/style/style.css';
+import axios from 'axios';
+import Cons from './cons';
 class Index extends Component {
     render() {
-        let {data}=this.props.UpdateRender;
-        console.log(data)
         return (
-            <div>
-                {
-                    data&&data.length&&data.map((v,i)=>(
-                        <ul key={i}>
-                            <li>{v.name}</li>
-                            <li>{v.age}</li>
-                            <li>{v.add}</li>
-                        </ul>
-                    ))
-                }
+            <div className="wrap">
+                <Cons />
             </div>
         );
     }
+    componentDidMount() {
+        let { updata } = this.props;
+        axios('./mock/dynamic.json').then(res => {
+            updata(res.data);
+        })
+        
+    }
 }
-
-export default connect((state)=>{
-    return state
-})(Index);
+let mapStateToProps = (state) => {
+    return state.UpdateRender
+}
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updata(payload) {
+            dispatch({ type: 'UPDATA', payload })
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

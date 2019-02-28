@@ -1,5 +1,6 @@
 import {createStore,combineReducers} from 'redux';
-import UpdateRender from './action/updata'
+import UpdateRender from './action/updata';
+
 const reducer=combineReducers({
     UpdateRender
 });
