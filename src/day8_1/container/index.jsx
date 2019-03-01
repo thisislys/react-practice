@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './list';
 import SetInfo from './setInfo';
+import '../common/style.css';
 let arr = [];
 class Index extends Component {
 
